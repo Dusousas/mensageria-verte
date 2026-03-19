@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; padding: 32px; }
+    h1 { color: #333; }
+    .order-info { background: #f9f9f9; border-radius: 6px; padding: 16px; margin: 24px 0; }
+    .total { font-size: 1.2rem; font-weight: bold; color: #2a7ae2; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pedido Confirmado!</h1>
+    <p>Olá, <strong>{{name}}</strong>! Seu pedido foi recebido com sucesso.</p>
+    <div class="order-info">
+      <p>Número do pedido: <strong>{{orderId}}</strong></p>
+      <p class="total">Total: {{total}}</p>
+    </div>
+    <p>Obrigado por comprar conosco!</p>
+  </div>
+</body>
+</html>
