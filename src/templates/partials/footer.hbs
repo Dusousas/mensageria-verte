@@ -1,0 +1,16 @@
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0; padding: 0;">
+  <tr>
+    <td style="padding: 18px 24px 26px 24px; background-color: #faf3e8; border-top: 1px solid #eadfce;">
+      <p style="margin: 0; font-family: Inter, Arial, sans-serif; color: #5e6b67; font-size: 12px; line-height: 19px;">
+        {{#if supportEmail}}
+        Precisa de ajuda? Fale com a gente em <a href="mailto:{{supportEmail}}" style="color: #2a5654; text-decoration: none;">{{supportEmail}}</a>.
+        {{else}}
+        Precisa de ajuda? Fale com nosso time de suporte.
+        {{/if}}
+      </p>
+      <p style="margin: 8px 0 0 0; font-family: Inter, Arial, sans-serif; color: #7a8783; font-size: 12px; line-height: 18px;">
+        {{#if appName}}{{appName}}{{else}}Clinica Verte{{/if}} - Este e-mail foi enviado automaticamente.
+      </p>
+    </td>
+  </tr>
+</table>

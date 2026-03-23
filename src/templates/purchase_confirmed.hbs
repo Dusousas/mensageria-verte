@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compra confirmada</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f6f1e8;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="24" border="0">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 640px; background: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(22, 59, 52, 0.08);">
+          <tr>
+            <td>
+              {{> header preheader="Pagamento aprovado e pedido confirmado" appName=appName}}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 26px 24px 8px 24px; font-family: Inter, Arial, sans-serif; color: #212529;">
+              <h1 style="margin: 0 0 12px 0; font-size: 24px; line-height: 31px; color: #163b34;">Compra confirmada</h1>
+              <p style="margin: 0; font-size: 15px; line-height: 24px; color: #3c4643;">
+                Obrigado{{#if name}}, {{name}}{{/if}}. Seu pedido foi confirmado com sucesso.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 24px 24px 24px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background: #faf3e8; border: 1px solid #eadfce; border-radius: 10px;">
+                <tr>
+                  <td style="padding: 14px 16px; font-family: Inter, Arial, sans-serif; font-size: 14px; color: #3c4643;">
+                    <strong style="color: #163b34;">Pedido:</strong> #{{orderId}}<br />
+                    {{#if amount}}<strong style="color: #163b34;">Valor:</strong> {{amount}}<br />{{/if}}
+                    {{#if paymentMethod}}<strong style="color: #163b34;">Pagamento:</strong> {{paymentMethod}}{{/if}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          {{#if items}}
+          <tr>
+            <td style="padding: 0 24px 20px 24px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;">
+                <tr>
+                  <th align="left" style="border-bottom: 1px solid #e6e6e6; padding: 10px 0; font-family: Inter, Arial, sans-serif; font-size: 13px; color: #163b34;">Item</th>
+                  <th align="center" style="border-bottom: 1px solid #e6e6e6; padding: 10px 0; font-family: Inter, Arial, sans-serif; font-size: 13px; color: #163b34;">Qtd</th>
+                  <th align="right" style="border-bottom: 1px solid #e6e6e6; padding: 10px 0; font-family: Inter, Arial, sans-serif; font-size: 13px; color: #163b34;">Valor</th>
+                </tr>
+                {{#each items}}
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #f1f1f1; font-family: Inter, Arial, sans-serif; font-size: 14px; color: #3c4643;">{{description}}</td>
+                  <td align="center" style="padding: 10px 0; border-bottom: 1px solid #f1f1f1; font-family: Inter, Arial, sans-serif; font-size: 14px; color: #3c4643;">{{quantity}}</td>
+                  <td align="right" style="padding: 10px 0; border-bottom: 1px solid #f1f1f1; font-family: Inter, Arial, sans-serif; font-size: 14px; color: #3c4643;">{{price}}</td>
+                </tr>
+                {{/each}}
+              </table>
+            </td>
+          </tr>
+          {{/if}}
+          {{#if orderUrl}}
+          <tr>
+            <td style="padding: 0 24px 28px 24px;">
+              <a href="{{orderUrl}}" style="display: inline-block; background-color: #2a5654; color: #ffffff; text-decoration: none; font-family: Inter, Arial, sans-serif; font-weight: 600; font-size: 14px; line-height: 20px; padding: 12px 20px; border-radius: 10px;">
+                Acompanhar pedido
+              </a>
+            </td>
+          </tr>
+          {{/if}}
+          <tr>
+            <td>
+              {{> footer appName=appName supportEmail=supportEmail}}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

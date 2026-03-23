@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedido entregue</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f6f1e8;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="24" border="0">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 640px; background: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(22, 59, 52, 0.08);">
+          <tr>
+            <td>
+              {{> header preheader="Seu pedido foi entregue com sucesso" appName=appName}}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 26px 24px 8px 24px; font-family: Inter, Arial, sans-serif; color: #212529;">
+              <h1 style="margin: 0 0 12px 0; font-size: 24px; line-height: 31px; color: #163b34;">Pedido entregue!</h1>
+              <p style="margin: 0; font-size: 15px; line-height: 24px; color: #3c4643;">
+                {{#if name}}Olá, {{name}}! O{{else}}O{{/if}} seu pedido foi entregue. Esperamos que você aproveite seus produtos!
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 24px 24px 24px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background: #faf3e8; border: 1px solid #eadfce; border-radius: 10px;">
+                <tr>
+                  <td style="padding: 14px 16px; font-family: Inter, Arial, sans-serif; font-size: 14px; color: #3c4643;">
+                    <strong style="color: #163b34;">Pedido:</strong> #{{orderId}}<br />
+                    <strong style="color: #163b34;">Status:</strong>
+                    <span style="display: inline-block; margin-left: 4px; padding: 2px 10px; background: #d1f0e0; border-radius: 20px; color: #155d3b; font-size: 13px; font-weight: 600;">Entregue</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 24px 8px 24px; font-family: Inter, Arial, sans-serif; font-size: 14px; color: #5e6b67; line-height: 21px;">
+              Se tiver qualquer dúvida sobre seu pedido ou precisar de suporte, entre em contato com a gente.
+            </td>
+          </tr>
+          {{#if orderUrl}}
+          <tr>
+            <td style="padding: 16px 24px 28px 24px;">
+              <a href="{{orderUrl}}" style="display: inline-block; background-color: #2a5654; color: #ffffff; text-decoration: none; font-family: Inter, Arial, sans-serif; font-weight: 600; font-size: 14px; line-height: 20px; padding: 12px 20px; border-radius: 10px;">
+                Ver meu pedido
+              </a>
+            </td>
+          </tr>
+          {{/if}}
+          <tr>
+            <td>
+              {{> footer appName=appName supportEmail=supportEmail}}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
